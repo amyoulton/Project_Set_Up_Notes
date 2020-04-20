@@ -1,55 +1,56 @@
 # To Start a New Postgress Project
 
-npm init -y
+to initializes npm and creates a package.json file setting yes to all basic questions
 
-- initializes npm and creates a package.json file setting yes to all basic questions
+    npm init -y
 
-npm i --save dependency <== dependency is replaced by the name of the dependency, ex. ejs
+how you install dependencies into your file
 
-- how you install dependencies into your file
+    npm i --save dependency <== dependency is replaced by the name of the dependency, ex. ejs
 
 # Different Dependencies
 
 ### Postgress (pg):
 
-- PostgreSQL client for Node.js
+PostgreSQL client for Node.js
 
-npm i --save pg
+    npm i --save pg
 
-- we are using pg as our database, and will be building it with knex
+we are using pg as our database, and will be building it with knex
 
 ### Knex
 
-npm i --save knex
+requires you to have database client installed as well (the pg we installed above for example)
 
-- requires you to have database client installed as well (the pg we installed above for example)
+    npm i --save knex
 
 we then need to do:
 
-knex init
+    knex init
 
-- this will create a knexfile.js file
-  Inside of it, we need to adjust it:
-- it should look something like this when you are done.
+this will create a knexfile.js file
 
-module.exports = {
+Inside of it, we need to adjust it:
+(It should look something like below when you are done)
 
-development: {
-client: 'pg', <=== list the database client you are using
+    module.exports = {
 
-connection: {
-database: 'knex_lab_one', <== list the name of the database you are using
-},
-migrations: {
-tablename: 'migrations',
-directory: './db/migrations' <== here mirgrations will be saved*
-},
-seeds: {
-directory: './db/seeds' <== where seeds will be saved*
-}
-},
+    development: {
+    client: 'pg', <=== list the database client you are using
 
-};
+    connection: {
+    database: 'knex_lab_one', <== list the name of the database you are using
+    },
+    migrations: {
+    tablename: 'migrations',
+    directory: './db/migrations' <== here mirgrations will be saved*
+    },
+    seeds: {
+    directory: './db/seeds' <== where seeds will be saved*
+    }
+    },
+
+    };
 
 - it is not necessary to create either of these directories beforehand, they will be generate when running the commands
 
@@ -75,26 +76,26 @@ Once you knex file looks good, check your scripts in your package.json file
 
 ### Commands for Knex:
 
-- base commands without using the shortform possibly created in your scripts
+base commands without using the shortform possibly created in your scripts
 
-knex migrate:make <filename>
+    knex migrate:make <filename>
 
-- makes a new migration file (replace filename with the name of your migration table)
-- as specified in your knexfile, it will be created inside the db/migrations directories
+makes a new migration file (replace filename with the name of your migration table)
+as specified in your knexfile, it will be created inside the db/migrations directories
 
-knex mirgrate:latest
+    knex mirgrate:latest
 
-- will migrate any of your unmigrated files
-- once you've migrated a file you shouldn't change it, either make a new migration or rollback your migration
+will migrate any of your unmigrated files
+once you've migrated a file you shouldn't change it, either make a new migration or rollback your migration
 
-knex seed:make <filename>
+    knex seed:make <filename>
 
-- makes a new seed file (replace filename with the name of your seed)
-- as specified in your knexfile, it will be created inside the db/seeds directories
+makes a new seed file (replace filename with the name of your seed)
+as specified in your knexfile, it will be created inside the db/seeds directories
 
-knex seed:run
+    knex seed:run
 
-- runs your seed files within the directory
+runs your seed files within the directory
 
 https://devhints.io/knex
 
