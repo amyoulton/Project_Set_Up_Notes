@@ -28,4 +28,4 @@ rails generate controller welcome
 
 ### To enter the rails repl in terminal:
 
-rails c
+    rails c
