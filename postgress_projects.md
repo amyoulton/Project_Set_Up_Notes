@@ -1,3 +1,5 @@
+# To Start a New Postgress Project
+
 npm init -y
 
 - initializes npm and creates a package.json file setting yes to all basic questions
@@ -6,9 +8,9 @@ npm i --save dependency <== dependency is replaced by the name of the dependency
 
 - how you install dependencies into your file
 
-Different Dependencies:
+# Different Dependencies
 
-Postgress (pg):
+### Postgress (pg):
 
 - PostgreSQL client for Node.js
 
@@ -16,7 +18,7 @@ npm i --save pg
 
 - we are using pg as our database, and will be building it with knex
 
-Knex:
+### Knex
 
 npm i --save knex
 
@@ -53,7 +55,7 @@ directory: './db/seeds' <== where seeds will be saved*
 
 Once you knex file looks good, check your scripts in your package.json file
 
-Here are some example scripts to include to make your life easier:
+#### Here are some example scripts to include to make your life easier:
 
     "start": "node app.js",
         - this would be your start file to run your app.js if you had one
@@ -71,7 +73,7 @@ Here are some example scripts to include to make your life easier:
 
 - when running database, use npm run <script>
 
-Commands for Knex:
+### Commands for Knex:
 
 - base commands without using the shortform possibly created in your scripts
 

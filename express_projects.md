@@ -1,3 +1,5 @@
+# To start a new Express project:
+
 npm init -y
 
 - initializes npm and creates a package.json file setting yes to all basic questions
@@ -11,9 +13,9 @@ npm i --save dependency <== dependency is replaced by the name of the dependency
 
 - how you install dependencies into your file
 
-Different Dependences:
+# Different Dependences:
 
-Express:
+### Express
 
 - express is a node framework
 
@@ -23,7 +25,7 @@ npm i --save express
   const express = require("express");
   const app = express();
 
-Express Build in Middlewares:
+### Express Build in Middlewares
 
 express.static
 
@@ -37,7 +39,7 @@ express.static
   - because its a node method, in main js file, need to include:
     const path = require("path");
 
-To include all of the above:
+### To include all of the above:
 
 app.use(express.static(path.join(\_\_dirname, "public"))); <== those \ are not included
 
@@ -51,7 +53,7 @@ To include above:
 
 app.use(express.urlencoded({ extended: true }));
 
-EJS:
+### EJS
 
 npm i --save ejs
 
@@ -62,7 +64,7 @@ npm i --save ejs
 - this allows the embedded js, and the ability to use ejs files when creating your pages
 - it is convetion to put all your ejs files inside of a 'views' directory within the project
 
-Morgan:
+### Morgan
 
 npm i --save morgan
 
@@ -74,7 +76,7 @@ npm i --save morgan
 - a logging tool for working with http servers
 - allows us to log request, errors and more to the console
 
-Cookie-Parser:
+### Cookie-Parser
 
 npm i --save cookie-parser
 
