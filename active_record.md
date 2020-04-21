@@ -28,7 +28,7 @@
 
 #### this will save that above question into the questions table (persist it)
 
-## Creating a Record Right Away:
+## To Create a Record Right Away:
 
 you can create a record right away in the database using (.create) method as in:
 
