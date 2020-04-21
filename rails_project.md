@@ -60,10 +60,14 @@ This created a schema inside of the db folder.
 
     add_column :table_name, :table_field, :data_type
 
-ex. add_column :questions, :view_count, :integer
+##### Example:
+
+     add_column :questions, :view_count, :integer
 
 #### To remove:
 
     remove_column :table_name, :table_field, :data_type
 
-ex. remove_column :questions, :like_count, :integer
+##### Example:
+
+    ex. remove_column :questions, :like_count, :integer
