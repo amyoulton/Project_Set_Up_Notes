@@ -36,7 +36,7 @@ Then, once added the required gems, run the following in terminal:
 
 Rails will auto generate timestaps.
 Running the model will also generate a migration, with the table fields in the migration folder.
-Model name is a singular version of tables name that is a plural.
+The table name will be the plural of the model name you chose.
 
 ### To migrate latest/remaining migrations:
 
@@ -51,3 +51,13 @@ This created a schema inside of the db folder.
 ### To reverse the last migration:
 
     rails db:rollback
+
+### To add fields to existing tables
+
+    rails g migration <name>
+
+Inside of the new migration, add
+
+    add_column table_name, table_field, data_type
+
+ex. add_column :questions, :view_count, :integer
