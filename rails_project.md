@@ -52,12 +52,18 @@ This created a schema inside of the db folder.
 
     rails db:rollback
 
-### To add fields to existing tables
+### To update fields to existing tables
 
     rails g migration <name>
 
-Inside of the new migration, add
+#### To add:
 
-    add_column table_name, table_field, data_type
+    add_column :table_name, :table_field, :data_type
 
 ex. add_column :questions, :view_count, :integer
+
+#### To remove:
+
+    remove_column :table_name, :table_field, :data_type
+
+ex. remove_column :questions, :like_count, :integer
