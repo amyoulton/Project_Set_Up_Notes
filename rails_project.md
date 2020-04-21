@@ -79,3 +79,7 @@ This created a schema inside of the db folder.
 or add `gem 'faker'` in your gem file, then run `bundle install`
 
 This allows you to create mock seed data for development purposes.
+
+### To run a seed file:
+
+    rails db:seed
