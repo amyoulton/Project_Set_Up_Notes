@@ -29,3 +29,11 @@ Then, once added the required gems, run the following in terminal:
 ### To enter the rails repl in terminal:
 
     rails c
+
+### To generate models:
+
+    rails g model <model-name> <table-field> <table-field>
+
+Rails will auto generate timestaps.
+Running the model will also generate a migration, with the table fields in the migration folder.
+Model name is a singular version of tables name that is a plural.
