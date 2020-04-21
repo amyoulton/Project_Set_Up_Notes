@@ -14,10 +14,10 @@
 
     q = Question.new
 
-- you can also pass in a hash to the new method as in:\
+#### you can also pass in a hash to the new method as in:
 
-  q = Question.new({ title: 'To be or not to be', body: 'is that a question?', view_count: 0 })
+    q = Question.new({ title: 'To be or not to be', body: 'is that a question?', view_count: 0 })
 
-- or for short:
+#### or for short:
 
-  q = Question.new title: 'To be or not to be', body: 'is that a question?', view_count: 0
+    q = Question.new title: 'To be or not to be', body: 'is that a question?', view_count: 0
