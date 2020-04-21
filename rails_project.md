@@ -71,3 +71,11 @@ This created a schema inside of the db folder.
 ##### Example:
 
     ex. remove_column :questions, :like_count, :integer
+
+### To install faker:
+
+    gem install faker
+
+or add `gem 'faker'` in your gem file, then run `bundle install`
+
+This allows you to create mock seed data for development purposes.
