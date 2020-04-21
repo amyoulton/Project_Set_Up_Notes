@@ -12,7 +12,7 @@
 
 ### To create the database for your rails project (database is named after project):
 
-    rails create:db
+    rails db:create
 
 ### To add other gems into your project for development:
 
