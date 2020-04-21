@@ -32,7 +32,7 @@ Then, once added the required gems, run the following in terminal:
 
 ### To generate models:
 
-    rails g model <model-name> <table-field> <table-field>
+    rails g model <model-name> <table-field:type> <table-field:type>
 
 Rails will auto generate timestaps.
 Running the model will also generate a migration, with the table fields in the migration folder.
