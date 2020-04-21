@@ -41,3 +41,13 @@ Model name is a singular version of tables name that is a plural.
 ### To migrate latest/remaining migrations:
 
     rails db:migrate
+
+This created a schema inside of the db folder.
+
+#### To check the status of migrations:
+
+    rails db:migrate:status
+
+### To reverse the last migration:
+
+    rails db:rollback
