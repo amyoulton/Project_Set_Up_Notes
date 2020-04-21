@@ -1,6 +1,6 @@
 # Active Record
 
-### Fetch All Questions
+## Fetch All Questions
 
     questions = Question.all
 
@@ -8,9 +8,9 @@
 - the object behaves like an array so you can call methods on it like (.each) and you
 - can also chain it with other methods to do other types of operations and queries
 
-### Creating A New Question
+## Creating A New Question
 
-## To Create a New Question Object in Memory do:
+### To Create a New Question Object in Memory do:
 
     q = Question.new
 
@@ -22,13 +22,13 @@
 
     q = Question.new title: 'To be or not to be', body: 'is that a question?', view_count: 0
 
-## To Save the Above Question into Questions Table:
+### To Save the Above Question into Questions Table:
 
     # q.save
 
 #### this will save that above question into the questions table (persist it)
 
-## To Create a Record Right Away:
+### To Create a Record Right Away:
 
 you can create a record right away in the database using (.create) method as in:
 
