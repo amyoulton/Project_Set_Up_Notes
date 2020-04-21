@@ -17,7 +17,8 @@
 ### To add other gems into your project for development:
 
 Add them into 'group :development do' method inside of Gemfile within the project,
-format them like gem 'gem-name'.
+format them like:
+``gem 'gem-name'
 Then, once added the required gems, run the following in terminal:
 
     bundle install
