@@ -37,3 +37,7 @@ Then, once added the required gems, run the following in terminal:
 Rails will auto generate timestaps.
 Running the model will also generate a migration, with the table fields in the migration folder.
 Model name is a singular version of tables name that is a plural.
+
+### To migrate latest/remaining migrations:
+
+    rails db:migrate
