@@ -224,7 +224,7 @@ The method for custom validations is singular unlike the 'validates' method for 
 
     validate :no_monkey
 
-    private
+private
 
     def no_monkey
         if body&.downcase&.include?("monkey")
@@ -240,3 +240,40 @@ To make a record invalid, you must add a validation error using the `.errors .ad
 
 - A symbol for the invalid column
 - An error message as a string
+
+## Callbacks
+
+### before_validation
+
+This is a life cycle callback. It's method allows it to respond to events during the life of a model instance (i.e being validated, being created, being updated etc.)
+All lifecycle callback methods take a symbol named after a method and calls that method at the appropriate time.
+
+before_validation(:set_default_view_count)
+
+For all available methods go to:
+https://guides.rubyonrails.org/v4.0/active_record_callbacks.html
+
+    def cool_view_count
+        view_count
+    end
+
+# Scope
+
+Create a scope with a class method:
+https://edgeguides.rubyonrails.org/active_record_querying.html#scopes
+
+    def self.recent
+        order(created_at: :desc).limit(10)
+    end
+
+Scopes are such a commonly used feature, that there's another way to create them quicker. It takes a name and a lambda as a callback:
+
+    scope(:recent, -> { order(created_at: :desc).limit(10)})
+
+    def self.search(query)
+        where("title ILIKE ? OR body ILIKE ?", "%#{query}%", "%#{query}%")
+    end
+
+Equivalent to:
+
+    scope(:search, -> (query){ where("title ILIKE ? OR body ILIKE ?", "%#{query}%", "%#{query}%") })
