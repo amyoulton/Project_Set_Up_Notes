@@ -55,3 +55,38 @@ This fetches the last record ordered by the id in an ascending order.
 #### The SQL equivalent:
 
     SELECT "questions".* FROM "questions" ORDER BY "qeustions"."id" DESC LIMIT 1;
+
+## .find
+
+    Question.find(1)
+
+This finds records by their primary key which is likely id
+
+## .find_by_x where x is the column name
+
+    Question.find_by_title('My Last Question')
+
+This finds a question with title this is exactly "My Last Question".
+
+## .where
+
+    Question.where({ title: 'My Last Question', body: 'The body of the question' })
+
+# WILDCARD SEARCHING
+
+You can perform wildcard searching with Active Record using LIKE within "where" method:
+
+    Question.where(['title LIKE ?', '%Last%'])
+
+If you are using Postgres client, you can use ILIKE for case-insensitive searching:
+
+    Question.where(['title ILIKE ?', '%Last%'])
+
+Note that in above queries we used a syntax that used '?' to insert variable into a SQL query.
+This is important to avoid SQL injection if the variable component is actually a user input such as search term.
+
+## .limit
+
+    Question.limit(10)
+
+This will give us back 10 first questions that are returned from the query
