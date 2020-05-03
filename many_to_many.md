@@ -28,9 +28,10 @@ In the necessary model (likely user):
     has_secure_password
 
 Since authentication is already built in, adding this method into the model enables authentication.
-It adds two attr_accessors :password & :password_confirmation
-Adds a prescence validation for password
-It will hash passwords automatically and store them in a column called password_digest
+It adds two attr_accessors :password & :password_confirmation.
+Adds a prescence validation for password.
+It will hash passwords automatically and store them in a column called password_digest.
+Additionally, `has_secure_password` has validations built in to it that require the password to exist.
 
 This method requires:
 
