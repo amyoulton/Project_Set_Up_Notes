@@ -48,14 +48,14 @@ This is saying:
 
     add_reference <table_we're_changing> <table_we're_connection>, <making sure foreign_key is true>
 
-Inside of the model for users (or the connecting table), we need to make sure to add the connections to the valid tables. So in our case, user has many products and reviews. Inside of the users model, we would add:
+Inside of the model for users (or the connecting table), we need to make sure to add the connections to the valid tables for active record. So in our case, user has many products and reviews. Inside of the users model, we would add:
 
     has_many :products, dependent: :nullify
     has_many :reviews, dependent: :nullify
 
 The dependent variable accepts many different methods that affect how records are treated when users are deleted. If a user is deleted in this case, all the reviews and products belonging to the user are set to 'null' in their respective tables, but aren't removed. If we do `dependent: destroy`, it will delete them from their respective tables.
 
-Similarly, we need to make sure that products and reviews are also connected in the correct way. Product has_many reviews so it should also have similar connection like above. Reviews are a different case, because the reviews belong to both products and users, so in the reviews model we would need to add:
+Similarly, we need to make sure that products and reviews are also connected so active record will have the correct methods for us to use. Product has_many reviews so it should also have similar connection like above. Reviews are a different case, because the reviews belong to both products and users, so in the reviews model we would need to add:
 
     belongs_to :product
     belongs_to :user
